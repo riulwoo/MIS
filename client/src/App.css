@@ -1,38 +1,677 @@
-.App {
-  text-align: center;
+/* 공통 CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+a {
+  text-decoration: none;
+  color: black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+li {
+  list-style: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.index {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Header.js */
+.header {
+  width: 118.875rem;
+  height: 3.75rem;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: orange;
+}
+
+.header .header-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .header-item .bars {
+  width: 2.813rem;
+  height: 2.813rem;
+  margin-left: 0.5rem;
+}
+
+.header .header-item .logo {
+  width: 15.625rem;
+  height: 2.813rem;
+}
+
+.header .header-item .search {
+  width: 43.75rem;
+  height: 2.813rem;
+  font-size: 1.25rem;
+}
+
+.header .header-item svg {
+  width: 2.813rem;
+  height: 2.813rem;
+  border: 1px dashed tomato;
+}
+
+.header .header-item .login-link {
+  font-size: 1.75rem;
+  margin-right: 1.5rem;
+  border: 1px dashed tomato;
+  float: right;
+}
+
+.header .header-item .login-item,
+.header .header-item .logout-item {
+  width: 18rem;
+  height: 2.5rem;
+  border: 1px dashed tomato;
+}
+.header .header-item .logout-item .logout-link,
+.header .header-item .logout-item button {
+  font-size: 1.75rem;
+  margin-left: 0.7rem;
+}
+
+/* Sidebar.js */
+.sidebar {
+  width: 18.75rem;
+  height: 54rem;
+  border: 1px solid tomato;
+}
+
+.sidebar-toggle {
+  width: 4.25rem !important;
+}
+
+.sidebar .sidebar-item {
+  display: flex;
+  align-items: center;
+  margin-left: 1.25rem;
+  margin-top: 1.25rem;
+}
+
+.sidebar .sidebar-item svg {
+  width: 2.813rem;
+  height: 2.813rem;
+  border: 1px dashed tomato;
+}
+
+.sidebar .sidebar-item .home-link {
+  height: 2.813rem;
+  font-size: 1.75rem;
+  border: 1px dashed tomato;
+  padding: 0px 6rem;
+}
+
+.sidebar .sidebar-item .myInfo-link {
+  height: 2.813rem;
+  font-size: 1.75rem;
+  border: 1px dashed tomato;
+  padding: 0px 2.5rem;
+}
+
+.sidebar .sidebar-item .notice-link {
+  height: 2.813rem;
+  font-size: 1.75rem;
+  border: 1px dashed tomato;
+  padding: 0px 3.375rem;
+}
+
+.sidebar .sidebar-item .free-link {
+  height: 2.813rem;
+  font-size: 1.75rem;
+  border: 1px dashed tomato;
+  padding: 0px 2.5rem;
+}
+
+.sidebar .sidebar-item .popular-link {
+  height: 2.813rem;
+  font-size: 1.75rem;
+  border: 1px dashed tomato;
+  padding: 0px 1rem;
+}
+
+.sidebar .genre-category {
+  width: 16.688rem;
+  height: 12.5rem;
+  border: 1px dashed tomato;
+  margin-left: 1.25rem;
+  margin-top: 1.563rem;
+}
+
+.sidebar .genre-category .genre-movie {
+  font-size: 1.5rem;
+}
+
+.sidebar .genre-category .category-item {
+  font-size: 1.125rem;
+  margin-top: 0.313rem;
+  margin-left: 1.875rem;
+  border: 1px dashed tomato;
+}
+
+/* Main.js */
+.main-container {
+  width: 100.125rem;
+  height: 75rem;
+  border: 1px dashed tomato;
+}
+
+.main-container .boxOffice {
+  width: 95rem;
+  height: 18.75rem;
+  border: 1px dashed tomato;
+  margin-top: 2.5rem;
+  margin-left: 2.5rem;
+}
+
+.main-container .boxOffice span {
+  font-size: 2rem;
+}
+
+.main-container .boxOffice .boxOffice-item {
+  width: 92.5rem;
+  height: 13.438rem;
+  border: 1px dashed tomato;
+  margin-top: 1.25rem;
+  margin-left: 1.25rem;
+}
+
+/* Join.js */
+.join-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid saddlebrown;
+}
+
+.join-form {
+  width: 28.125rem;
+  height: 36.5rem;
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.join-area {
+  width: 28.125rem;
+  height: 4rem;
+  border: 2px solid salmon;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.join-form .logo {
+  width: 25rem;
+  height: 8.125rem;
+  border: 1px solid green;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.join-form .input-container {
+  width: 100%;
+  height: 28rem;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.join-form .input-container input {
+  width: 25rem;
+  height: 2.5rem;
+  font-size: 2rem;
+}
+
+.join-form .input-container .id,
+.join-form .input-container .email {
+  width: 60%;
+}
+
+.join-form .input-container .dlb-chk,
+.join-form .input-container .auth {
+  width: 28%;
+  height: 2.5rem;
+  margin-left: 2%;
+}
+
+.join-form .join {
+  width: 25rem;
+  height: 100%;
+}
+
+.border-redLine {
+  outline: 1px solid red;
+}
+
+.join-form .input-container input:focus {
+  outline: 2px solid green;
+}
+
+/* Genre.js */
+.genre {
+  width: 100rem;
+  border: 1px solid tomato;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.genre-container {
+  width: 80rem;
+  height: 12rem;
+  border: 1px dashed tomato;
+
+  margin-top: 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.genre-container .genre-item {
+  width: 10rem;
+  height: 5rem;
+  border: 1px solid tomato;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.genre .genre-sort {
+  width: 80rem;
+  height: 3rem;
+  border: 1px solid tomato;
+
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+
+.genre .genre-sort select {
+  font-size: 18pt;
+}
+
+.genre .genre-movie {
+  width: 80rem;
+  height: 80rem;
+  border: 1px solid tomato;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.genre .genre-movie .movie-item {
+  width: 14rem;
+  height: 10rem;
+  border: 1px dashed tomato;
+}
+
+.genre .genre-movie .movie-item img {
+  width: 100%;
+  height: 100%;
+}
+
+/* Details.js */
+.details {
+  width: 100rem;
+  border: 1px solid tomato;
+
+  display: flex;
+  justify-content: center;
+}
+
+.details .details-container {
+  width: 85rem;
+  height: 80rem;
+  border: 1px dashed tomato;
+
+  margin-top: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.details .details-container .content {
+  width: 85rem;
+  height: 30rem;
+  border: 1px dashed tomato;
+
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 2rem;
+}
+
+.details .details-container .poster {
+  width: 25rem;
+  height: 30rem;
+  border: 1px dashed tomato;
+}
+
+.details .details-container .info {
+  width: 40rem;
+  height: 30rem;
+  border: 1px dashed tomato;
+}
+
+.details .details-container .ref {
+  width: 15rem;
+  height: 30rem;
+  border: 1px dashed tomato;
+}
+
+.details .details-container .star {
+  width: 85rem;
+  height: 5rem;
+  border: 1px dashed tomato;
+
+  display: flex;
+}
+
+.details .details-container .star .star-rating {
+  width: 25rem;
+  height: 5rem;
+  border: 1px dashed tomato;
+}
+
+.details .details-container .star .star-content {
+  width: 60rem;
+  height: 5rem;
+  border: 1px dashed tomato;
+}
+
+.details .details-container .other-review {
+  width: 85rem;
+  height: 40rem;
+  border: 1px dashed tomato;
+}
+
+/* MyInfo.js */
+.myInfo {
+  width: 100rem;
+  height: 54rem;
+  border: 1px solid tomato;
+
+  display: flex;
+  justify-content: center;
+}
+
+.myInfo .myInfo-container {
+  width: 96rem;
+  height: 46.6rem;
+  border: 1px solid tomato;
+
+  margin-top: 2rem;
+}
+
+.myInfo .user-container {
+  width: 96rem;
+  height: 5rem;
+  border: 1px solid black;
+
+  display: flex;
+  align-items: center;
+}
+
+.myInfo .myInfo-container .user-container button {
+  font-size: 18pt;
+  margin-left: 2rem;
+}
+
+.myInfo .myInfo-container .favorites,
+.myInfo .myInfo-container .recent-record {
+  width: 96rem;
+  height: 18.75rem;
+  border: 1px dashed tomato;
+
+  margin-top: 2rem;
+}
+
+.myInfo .myInfo-container .user-container span,
+.myInfo .myInfo-container .favorites span,
+.myInfo .myInfo-container .recent-record span {
+  margin-left: 1rem;
+  font-size: 18pt;
+}
+
+.myInfo .myInfo-container .favorites .favorites-list,
+.myInfo .myInfo-container .recent-record .recent-record-list {
+  width: 90rem;
+  height: 15rem;
+  border: 1px dashed tomato;
+
+  margin-top: 0.5rem;
+  margin-left: 3rem;
+}
+
+/* Notice.js */
+.notice {
+  width: 100rem;
+  height: 54rem;
+  border: 1px dashed tomato;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice .notice-container {
+  width: 60rem;
+  height: 46.5rem;
+  border: 1px dashed tomato;
+}
+
+.notice .notice-container h1 {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.notice .notice-container .notice-content {
+  width: 56rem;
+  height: 34rem;
+  border: 1px dashed tomato;
+
+  margin-top: 2rem;
+  margin-left: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.notice .notice-container .notice-page {
+  width: 56rem;
+  height: 4rem;
+  border: 1px dashed tomato;
+
+  margin-left: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.notice .notice-container .notice-content ul .notice-item {
+  font-size: 14pt;
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+
+.notice .notice-container .notice-content ul .notice-item span:nth-child(2) {
+  float: right;
+  margin-right: 3rem;
+}
+
+.notice .notice-container .notice-page ul {
+  width: 6rem;
+  height: 2rem;
+  border: 1px dashed tomato;
+  font-size: 16pt;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* FreeBoard.js */
+.freeBoard {
+  width: 100rem;
+  height: 54rem;
+  border: 1px dashed tomato;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.freeBoard .freeBoard-container {
+  width: 60rem;
+  height: 46.5rem;
+  border: 1px dashed tomato;
+}
+
+.freeBoard .freeBoard-container h1 {
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+.freeBoard .freeBoard-container .freeBoard-content {
+  width: 56rem;
+  height: 34rem;
+  border: 1px dashed tomato;
+
+  margin-top: 2rem;
+  margin-left: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.freeBoard .freeBoard-container .freeBoard-page {
+  width: 56rem;
+  height: 4rem;
+  border: 1px dashed tomato;
+
+  margin-left: 2rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.freeBoard .freeBoard-container .freeBoard-content ul .freeBoard-item {
+  font-size: 14pt;
+  margin-left: 3rem;
+  margin-bottom: 1rem;
+}
+
+.freeBoard
+  .freeBoard-container
+  .freeBoard-content
+  ul
+  .freeBoard-item
+  span:nth-child(2) {
+  float: right;
+  margin-right: 3rem;
+}
+
+.freeBoard .freeBoard-container .freeBoard-page ul {
+  width: 6rem;
+  height: 2rem;
+  border: 1px dashed tomato;
+  font-size: 16pt;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* UpdateMyInfo.js */
+.updateMyInfo-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid saddlebrown;
+}
+
+.updateMyInfo-form {
+  width: 28.125rem;
+  height: 36.5rem;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.updateMyInfo-area {
+  width: 28.125rem;
+  height: 4rem;
+  border: 2px solid salmon;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.updateMyInfo-form .logo {
+  width: 25rem;
+  height: 8.125rem;
+  border: 1px solid green;
+}
+
+.updateMyInfo-form .input-container {
+  width: 100%;
+  height: 28rem;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.updateMyInfo-form .input-container input {
+  width: 25rem;
+  height: 2.5rem;
+  font-size: 2rem;
+}
+
+.updateMyInfo-form .input-container .email {
+  width: 60%;
+}
+
+.updateMyInfo-form .input-container .dlb-chk,
+.updateMyInfo-form .input-container .auth {
+  width: 28%;
+  height: 2.5rem;
+  margin-left: 2%;
+}
+
+.updateMyInfo-form .updateMyInfo {
+  width: 25rem;
+  height: 100%;
+}
+
+.border-redLine {
+  outline: 1px solid red;
+}
+
+.updateMyInfo-form .input-container input:focus {
+  outline: 2px solid green;
 }
