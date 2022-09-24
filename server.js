@@ -6,14 +6,14 @@ const io = require('socket.io')(server);
 const connection = require('./DB/dbconn');
 const PORT = 4000;
 
-// DB 연결
-connection.connect(err => {
-  if(err){
-    console.log(err);
-  }
-  else
-  console.log("MySQL 연결 완료");
-});
+// // DB 연결
+// connection.connect(err => {
+//   if(err){
+//     console.log(err);
+//   }
+//   else
+//   console.log("MySQL 연결 완료");
+// });
 
 // 연결한 DB에 사용할 SQL 변수
 let sql = "";
