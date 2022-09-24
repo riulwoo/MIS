@@ -6,24 +6,6 @@ const io = require('socket.io')(server);
 const connection = require('./DB/dbconn');
 const PORT = 4000;
 
-// // DB 연결
-// connection.connect(err => {
-//   if(err){
-//     console.log(err);
-//   }
-//   else
-//   console.log("MySQL 연결 완료");
-// });
-
-// 연결한 DB에 사용할 SQL 변수
-let sql = "";
-
-// React 프로젝트 폴더 연결
-app.use(express.static(path.join(__dirname, 'client/build')));
-app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, '/client/build/index.html'));
-})
-
 // DB 사용법
 // connection변수의 내장함수 query를 이용
 // -- 예시 --
@@ -34,6 +16,17 @@ app.get('/', (req, res)=>{
 //   }
 //   console.log(results);
 // })
+
+
+// 연결한 DB에 사용할 SQL 변수
+let sql = "";
+
+// React 프로젝트 폴더 연결
+app.use(express.static(path.join(__dirname, 'client/build')));
+app.get('/', (req, res)=>{
+    res.sendFile(path.join(__dirname, '/client/build/index.html'));
+})
+
 
 
 
