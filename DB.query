@@ -1,0 +1,78 @@
+mysql -u workmate -p workmate123
+id : workmate
+pw : workmate123
+
+create database MIS;
+
+create table tb_member(
+    seq int not null auto_increment,
+    mb_ID varchar(30) not null,
+    mb_PW varchar(100),
+    mb_Nick varchar(50),
+    mb_Email varchar(50),
+    primary key(seq)
+) engine = myisam charset = utf8;
+
+create table tb_member_report(
+    rp_ID varchar(30),
+    rp_ReportNum int,
+    rp_isBan char(1),
+    rp_ReleaseDate date,
+    primary key(rp_ID),
+    foreign key(rp_ID) references tb_member(mb_ID) on update cascade 
+) engine = myisam charset = utf8;
+
+create table tb_member_mypage(
+    mp_ID varchar(30),
+    mp_MovieCode int,
+    mp_InputDate date,
+    primary key(mp_ID,mp_MovieCode),
+    foreign key(mp_ID) references tb_member(mb_ID) on update cascade
+) engine = myisam charset = utf8;
+--------------------------------------------------------------------------------------------------------
+create table tb_board_notice(
+    nt_seq int not null auto_increment,
+    nt_Title varchar(40),
+    nt_Content text,
+    nt_InputDate date,
+    nt_UpdateDate date,
+    nt_Writer varchar(30),
+    primary key(nt_seq),
+    foreign key(nt_Writer) references tb_member(mb_ID) on update cascade
+) engine = myisam charset = utf8;
+
+create table tb_board_freeboard(
+    fb_seq int not null auto_increment,
+    fb_Title varchar(40),
+    fb_Content text,
+    fb_InputDate date,
+    fb_UpdateDate date,
+    fb_Writer varchar(30),
+    primary key(fb_seq),
+    foreign key(fb_Writer) references tb_member(mb_ID) on update cascade
+) engine = myisam charset = utf8;
+
+create table tb_board_review(
+    rv_seq int not null auto_increment,
+    rv_StarRate int,
+    rv_Content text,
+    rv_Writer varchar(30),
+    rv_MovieCode int,
+    rv_InputDate date,
+    rv_UpdateDate date,
+    primary key(rv_seq),
+    foreign key(rv_Writer) references tb_member(mb_ID) on update cascade
+) engine = myisam charset = utf8;
+
+create table tb_board_comment(
+    cm_seq int not null auto_increment,
+    cm_fb_seq int,
+    cm_Title varchar(40),
+    cm_Content text,
+    cm_InputDate date,
+    cm_UpdateDate date,
+    cm_Writer varchar(30),
+    primary key(cm_seq),
+    foreign key(cm_fb_seq) references tb_board_freeboard(fb_seq) on update cascade,
+    foreign key(cm_Writer) references tb_member(mb_ID) on update cascade
+) engine = myisam charset = utf8;
