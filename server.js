@@ -27,13 +27,13 @@ app.get('/', (req, res)=>{
 // DB 사용법
 // connection변수의 내장함수 query를 이용
 // -- 예시 --
-sql = "INSERT INTO tb_member (mb_ID, mb_PW, mb_Nick, mb_Email) VALUES ('admin','admin123','관리자','admin@mis.kr')";
-connection.query(sql, (err, results, fields)=>{
-  if(err){
-    console.log(err);
-  }
-  console.log(results);
-})
+// sql = "INSERT INTO tb_member (mb_ID, mb_PW, mb_Nick, mb_Email) VALUES ('admin','admin123','관리자','admin@mis.kr')";
+// connection.query(sql, (err, results, fields)=>{
+//   if(err){
+//     console.log(err);
+//   }
+//   console.log(results);
+// })
 
 
 
