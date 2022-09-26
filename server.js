@@ -23,23 +23,25 @@ let sql = "";
 
 // React 프로젝트 폴더 연결
 app.use(express.static('client/build'));
-app.get('/', (req, res)=>{
-    res.sendFile(__dirname + '/client/build/index.html');
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 app.listen(PORT, function() {
   console.log(`listening on ${PORT}`)
 })
+
+app.get('/', (req, res)=>{
+    res.sendFile('/client/build/index.html', {root : '.'});
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
