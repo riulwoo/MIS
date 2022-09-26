@@ -24,7 +24,7 @@ let sql = "";
 // React 프로젝트 폴더 연결
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, '/client/build/index.html'));
+    res.sendFile('index.html', {root: '/client/build'});
 })
 
 
