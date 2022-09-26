@@ -1,6 +1,6 @@
-const express = require('express')
-const app = express()
-const server = require('http').Server(app)
+const express = require('express');
+const app = express();
+const server = require('http').Server(app);
 const path = require('path');
 const io = require('socket.io')(server);
 const connection = require('./DB/dbconn');
@@ -24,7 +24,7 @@ let sql = "";
 // React 프로젝트 폴더 연결
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('/', (req, res)=>{
-    res.sendFile(path.join(__dirname, 'client/build/index.html'));
+    res.sendFile(path.join('client/build/index.html'));
 })
 
 
