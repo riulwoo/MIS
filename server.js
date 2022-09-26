@@ -2,7 +2,6 @@ const express = require('express');
 const app = express();
 const server = require('http').Server(app);
 const path = require('path');
-const fs = require('fs');
 const io = require('socket.io')(server);
 const connection = require('./DB/dbconn');
 const PORT = 4000;
@@ -25,15 +24,7 @@ let sql = "";
 // React 프로젝트 폴더 연결
 app.use(express.static('client/build'));
 app.get('/', (req, res)=>{
-    fs.sendFile('client/build/index.html' ,(err, data)=>{
-      if(err){
-        res.send('에러');
-      } else {
-        res.writeHead(200, { 'Content-Type': 'text/html' })
-        res.write(data)
-        res.end()
-      }
-    });
+    res.sendFile(__dirname + '/client/build/index.html');
 })
 
 
