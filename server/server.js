@@ -28,5 +28,6 @@ app.listen(PORT, function () {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/public", "index.html"));
+  res.sendFile("/client/build/index.html", { root: ".." });
 });
+//path.join(__dirname, "../client/public", "index.html")
