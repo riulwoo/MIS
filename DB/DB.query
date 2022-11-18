@@ -29,7 +29,7 @@ create table tb_member_mypage(
     primary key(mp_ID,mp_MovieCode),
     foreign key(mp_ID) references tb_member(mb_ID) on update cascade
 ) engine = myisam charset = utf8;
---------------------------------------------------------------------------------------------------------
+
 create table tb_board_notice(
     nt_seq int not null auto_increment,
     nt_Title varchar(40),
